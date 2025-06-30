@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD 231 Course Home Page for Diogo Rangel Dos Santos">
+    <meta name="author" content="Diogo Rangel Dos Santos">
+    <title>WDD 231 - Diogo Rangel Dos Santos - Course Home Page</title>
+
+    <!-- Google Fonts API - Using 'Inter' as requested by general instructions -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <!-- Normalize CSS for consistent styling across browsers -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+    <!-- Custom CSS files (small.css for mobile-first, larger.css for desktop overrides) -->
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+
+    <!-- JavaScript files with defer attribute for non-blocking loading -->
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/course.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <!-- Site logo placeholder (SVG recommended) -->
+        <div class="logo-container">
+            <svg class="site-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="40" fill="#4A90E2" />
+                <text x="50" y="60" font-family="Inter, sans-serif" font-size="35" fill="white" text-anchor="middle"
+                    font-weight="bold">BYU</text>
+            </svg>
+            <span class="site-name">Diogo Rangel Dos Santos</span>
+        </div>
+        <!-- Hamburger icon for small screens -->
+        <button id="hamburger-menu" aria-label="Toggle navigation menu">☰</button>
+    </header>
+
+    <nav>
+        <ul id="primary-nav">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#">Chamber</a></li>
+            <li><a href="#">Final</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Home</h1>
+
+        <section class="hero-section">
+            <h2>Welcome to My Course Home Page!</h2>
+            <p>This page serves as a central hub for my assignments and projects in WDD 231. Explore the content below
+                to see my progress and work.</p>
+            <img src="https://avatars.githubusercontent.com/u/60902855?v=4" alt="Placeholder image for hero section"
+                loading="lazy">
+        </section>
+
+        <section class="hero-section">
+            <a href="https://github.com/diogorangel"></a>
+            <img height="440m"
+                src="https://github-readme-stats.vercel.app/api?username=diogorangel&show_icons=true&bg_color=333&text_color=fff&title_color=D1D1D1&icon_color=D1D1D1&border_radius=8&hide=prs&include_all_commits=true" />
+            <img height="440m"
+                src="https://github-readme-stats.vercel.app/api/top-langs/?username=diogorangel&layout=compact&langs_count=7&theme=dark" />
+        </section>
+
+        <section class="about-me-section">
+            <h2>About Me</h2>
+            <p>Hello! I'm Diogo Rangel Dos Santos , a professional and student passionate about web development.
+                As a System Analyst (QA), experiences working with test automation, quality assurance, and software
+                development using Java, Python, Selenium, Cucumber,SQL, HTML , CSS and other tools and frameworks.
+                I work and already worked with some bank clients to deliver reliable, secure, and user-friendly web and
+                mobile applications, APIs, and web services, using agile methodology and best practices.
+                And as Support Analyst I did many services for clients with system ERP (Enterprise Resource Planning). I
+                am passionate about learning new technologies and applying them to solve real-world problems.
+                I have completed multiple certifications and courses in machine learning, software testing, and
+                IoT,cybersecurity and I have an MBA in agile management. I also have a background in music and web
+                development, which gives me a creative and analytical mindset. My goal is to become a leader and an
+                expert in the field of test automation and software engineering and software development.How Student I
+                already did projects with C++, Java, HTML and CSS and develop other projects including projects about
+                cybersecurity.This course is helping me deepen my understanding of HTML, CSS, and JavaScript to build
+                robust and
+                responsive web applications. I'm excited to share my journey and creations here.</p>
+            <p>My goal is to master front-end development principles, including semantic HTML, accessible design, and
+                efficient JavaScript practices, to create engaging user experiences.</p>
+        </section>
+
+        <section class="course-section">
+            <h2>Web and Computer Programming Certificate Courses</h2>
+            <div class="course-filters">
+                <button id="filter-all" class="filter-button active">All Courses</button>
+                <button id="filter-wdd" class="filter-button">WDD Courses</button>
+                <button id="filter-cse" class="filter-button">CSE Courses</button>
+            </div>
+            <div id="course-cards-container" class="course-grid">
+                <!-- Course cards will be dynamically loaded here by JavaScript -->
+            </div>
+            <p class="total-credits">Total Credits Displayed: <span id="total-credits-value">0</span></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/diogorangel" target="_blank" rel="noopener noreferrer"
+                aria-label="GitHub Profile">GitHub</a>
+            <a href="https://www.linkedin.com/in/diogorangels/" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn Profile">LinkedIn</a>
+            <!--<a href="#" target="_blank" rel="noopener noreferrer" aria-label="Another Social Link">Another Social</a-->
+            <!--a href="#" target="_blank" rel="noopener noreferrer" aria-label="Yet Another Social Link">Yet Another</a-->
+        </div>
+        <p>&copy; <span id="currentyear"></span> Diogo Rangel - São Paulo/Brazil</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
+</html>

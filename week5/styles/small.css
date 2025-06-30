@@ -1,0 +1,301 @@
+/* styles/small.css - Mobile-first styling */
+
+/* General Body and Typography */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    /* Light background */
+    color: #333;
+    /* Dark text */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Ensure footer sticks to bottom */
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    color: #2c3e50;
+    /* Darker heading color */
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    padding: 1em 0;
+}
+
+h2 {
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 1em;
+}
+
+p {
+    font-size: 0.95em;
+    margin-bottom: 1em;
+}
+
+/* Header Styling */
+header {
+    background-color: #4A90E2;
+    /* Blue header */
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    /* For hamburger positioning */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.site-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    /* White background for the 'W' circle */
+}
+
+.site-name {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+#hamburger-menu {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    display: block;
+    /* Show hamburger on small screens */
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#hamburger-menu:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Navigation Styling (Mobile) */
+nav {
+    background-color: #34495e;
+    /* Darker blue/grey for nav */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#primary-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    /* Stack links vertically on small screens */
+    overflow: hidden;
+    /* Hide overflow when closed */
+    max-height: 0;
+    /* Initially hidden */
+    transition: max-height 0.3s ease-out;
+    /* Smooth transition for opening/closing */
+}
+
+#primary-nav.open {
+    max-height: 200px;
+    /* Adjust based on number of links to reveal */
+}
+
+#primary-nav li a {
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+#primary-nav li:last-child a {
+    border-bottom: none;
+}
+
+#primary-nav li a:hover,
+#primary-nav li a.active {
+    background-color: #2c3e50;
+    /* Slightly darker on hover/active */
+    color: #ECF0F1;
+    /* Lighter text */
+}
+
+/* Main Content Styling */
+main {
+    flex: 1;
+    /* Allows main to grow and push footer down */
+    padding: 1rem;
+    max-width: 1200px;
+    /* Max width to prevent content from being too wide */
+    margin: 0 auto;
+    /* Center main content */
+}
+
+section {
+    background-color: white;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+section p {
+    padding: 0 0.5rem;
+    /* Small padding to prevent text touching edges */
+}
+
+.hero-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Course Section Styling */
+.course-filters {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow buttons to wrap on small screens */
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.filter-button {
+    background-color: #6c7a89;
+    /* Greyish blue */
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filter-button:hover {
+    background-color: #566473;
+    transform: translateY(-1px);
+}
+
+.filter-button.active {
+    background-color: #4A90E2;
+    /* Active blue */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Single column on small screens */
+    gap: 1.2rem;
+}
+
+.course-card {
+    background-color: #ECF0F1;
+    /* Light grey background for cards */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.course-card h3 {
+    font-size: 1.2em;
+    color: #34495e;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.course-card p {
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 0.3em;
+}
+
+.course-card.completed {
+    background-color: #D4EDDA;
+    /* Light green for completed courses */
+    border-color: #28A745;
+    /* Green border */
+    box-shadow: 0 2px 8px rgba(40, 167, 69, 0.2);
+}
+
+.course-card.completed h3 {
+    color: #28A745;
+}
+
+.total-credits {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    padding-right: 0.5rem;
+    color: #2c3e50;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #34495e;
+    /* Darker blue/grey for footer */
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9em;
+    border-top: 1px solid #2c3e50;
+}
+
+.social-links {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-links a {
+    color: #ECF0F1;
+    /* Light text for links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #4A90E2;
+    /* Blue on hover */
+}
+
+footer p {
+    margin: 0.5em 0;
+    padding: 0 0.5rem;
+    /* Small padding for footer text */
+}
