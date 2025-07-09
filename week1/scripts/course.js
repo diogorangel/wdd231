@@ -43,15 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {
             "number": 210,
             "title": "Programming with Classes",
             "credits": 2,
-            "completed": true // Example: This course is completed
+            "completed": true // Set to true if you've completed this course
+            // Example: This course is completed
         },
-        {
-            "subject": "WDD",
-            "number": 231,
-            "title": "Frontend Web Development I",
-            "credits": 2,
-            "completed": false // Set to true if you've completed this course
-        },
+        // {
+        //     "subject": "WDD",
+        //     "number": 231,
+        //     "title": "Frontend Web Development I",
+        //     "credits": 2,
+        //     "completed": false // Set to true if you've completed this course
+        // },
         {
             "subject": "CSE",
             "number": 210,

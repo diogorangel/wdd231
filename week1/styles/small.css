@@ -44,7 +44,7 @@ p {
 
 /* Header Styling */
 header {
-    background-color: #4A90E2;
+    background-color: #3a44ce;
     /* Blue header */
     color: white;
     padding: 1rem;
@@ -166,6 +166,15 @@ section p {
 }
 
 .hero-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.github-section img {
     max-width: 100%;
     height: auto;
     display: block;

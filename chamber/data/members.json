@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Timbuktu Artisans Guild",
+        "address": "Market Square, Timbuktu",
+        "phone": "+223 66 123 456",
+        "website": "https://www.timbuktuartisans.org",
+        "image": "artisans-guild.webp",
+        "membershipLevel": "Gold",
+        "tagline": "Preserving ancient crafts"
+    },
+    {
+        "name": "Desert Oasis Tours",
+        "address": "25 Sahara Way, Timbuktu",
+        "phone": "+223 77 987 654",
+        "website": "https://www.desertoasistours.com",
+        "image": "desert-oasis-tours.webp",
+        "membershipLevel": "Silver",
+        "tagline": "Unforgettable desert adventures"
+    },
+    {
+        "name": "Sankore Book Emporium",
+        "address": "University Lane, Timbuktu",
+        "phone": "+223 88 234 567",
+        "website": "https://www.sankorebooks.com",
+        "image": "sankore-books.webp",
+        "membershipLevel": "Gold",
+        "tagline": "Books, scrolls, and ancient wisdom"
+    },
+    {
+        "name": "Niger River Logistics",
+        "address": "Port Road, Timbuktu",
+        "phone": "+223 99 345 789",
+        "website": "https://www.nigerriverlogistics.net",
+        "image": "niger-logistics.webp",
+        "membershipLevel": "Bronze",
+        "tagline": "Reliable transport across the region"
+    },
+    {
+        "name": "Sahara Spice Co.",
+        "address": "Bazaar District, Timbuktu",
+        "phone": "+223 69 456 123",
+        "website": "https://www.saharaspice.com",
+        "image": "sahara-spice.webp",
+        "membershipLevel": "Silver",
+        "tagline": "Exotic spices from the heart of Africa"
+    },
+    {
+        "name": "Mali Music Academy",
+        "address": "Culture Street, Timbuktu",
+        "phone": "+223 70 567 890",
+        "website": "https://www.malimusic.edu",
+        "image": "mali-music-academy.webp",
+        "membershipLevel": "Non-Profit",
+        "tagline": "Nurturing the next generation of griots"
+    },
+    {
+        "name": "Ancient Gold Exchange",
+        "address": "Gold Market, Timbuktu",
+        "phone": "+223 71 678 901",
+        "website": "https://www.ancientgold.biz",
+        "image": "ancient-gold.webp",
+        "membershipLevel": "Gold",
+        "tagline": "Trusted partners in precious metals"
+    },
+    {
+        "name": "Caravan Cafe",
+        "address": "Oasis Avenue, Timbuktu",
+        "phone": "+223 60 789 012",
+        "website": "https://www.caravancafe.com",
+        "image": "caravan-cafe.webp",
+        "membershipLevel": "Bronze",
+        "tagline": "The best dates and tea in town"
+    }
+]
