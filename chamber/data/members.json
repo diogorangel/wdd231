@@ -32,7 +32,7 @@
         "phone": "+178 123 4567",
         "website": "https://www.linkedin.com/in/lievelyn-adebayo/",
         "image": "tech.jpg",
-        "membershipLevel": "Silver",
+        "membershipLevel": "Gold",
         "tagline": "Creative Designer and Developer with a flair for aesthetics"
     },
     {
@@ -41,7 +41,7 @@
         "phone": "+223 69 456 123",
         "website": "https://www.linkedin.com/in/gwen-utley-8b6636360/",
         "image": "tech.jpg",
-        "membershipLevel": "Silver",
+        "membershipLevel": "Gold",
         "tagline": "Software Engineer and Developer with a passion for technology"
     },
     {
@@ -50,7 +50,7 @@
         "phone": "+223 70 567 890",
         "website": "https://www.linkedin.com/in/Martin-Cespedes/",
         "image": "tech.jpg",
-        "membershipLevel": "Silver",
+        "membershipLevel": "Gold",
         "tagline": "Scrum Master and Developer with a focus on agile methodologies"
     },
     {
