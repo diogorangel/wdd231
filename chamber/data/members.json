@@ -1,74 +1,74 @@
 [
     {
-        "name": "Timbuktu Artisans Guild",
-        "address": "Market Square, Timbuktu",
-        "phone": "+223 66 123 456",
-        "website": "https://www.timbuktuartisans.org",
-        "image": "artisans-guild.webp",
+        "name": "Diogo Rangel Dos Santos - Services",
+        "address": "São Paulo, Brazil",
+        "phone": "+5511969999-7777",
+        "website": "https://www.linkedin.com/in/diogorangels/",
+        "image": "tech.jpg",
         "membershipLevel": "Gold",
-        "tagline": "Preserving ancient crafts"
+        "tagline": "Quality and web development and design services"
     },
     {
-        "name": "Desert Oasis Tours",
-        "address": "25 Sahara Way, Timbuktu",
-        "phone": "+223 77 987 654",
-        "website": "https://www.desertoasistours.com",
-        "image": "desert-oasis-tours.webp",
+        "name": "Damilola Adefenwa",
+        "address": "Lagos, Nigeria",
+        "phone": "+222222222222",
+        "website": "https://www.linkedin.com/in/damilola-adefenwa/",
+        "image": "tech.jpg",
+        "membershipLevel": "Gold",
+        "tagline": "Product Designer and Developer with a passion for creating user-friendly interfaces"
+    },
+    {
+        "name": "Emmanuel Odedina",
+        "address": "Lagos, Nigeria",
+        "phone": "+222222222222",
+        "website": "https://www.linkedin.com/in/emmanuel-odedina/",
+        "image": "tech.jpg",
+        "membershipLevel": "Gold",
+        "tagline": "Programmer and Developer with a focus on innovative solutions"
+    },
+    {
+        "name": "Lievelyn Adebayo",
+        "address": "Caracas, Venezuela",
+        "phone": "+178 123 4567",
+        "website": "https://www.linkedin.com/in/lievelyn-adebayo/",
+        "image": "tech.jpg",
         "membershipLevel": "Silver",
-        "tagline": "Unforgettable desert adventures"
+        "tagline": "Creative Designer and Developer with a flair for aesthetics"
     },
     {
-        "name": "Sankore Book Emporium",
-        "address": "University Lane, Timbuktu",
-        "phone": "+223 88 234 567",
-        "website": "https://www.sankorebooks.com",
-        "image": "sankore-books.webp",
-        "membershipLevel": "Gold",
-        "tagline": "Books, scrolls, and ancient wisdom"
-    },
-    {
-        "name": "Niger River Logistics",
-        "address": "Port Road, Timbuktu",
-        "phone": "+223 99 345 789",
-        "website": "https://www.nigerriverlogistics.net",
-        "image": "niger-logistics.webp",
-        "membershipLevel": "Bronze",
-        "tagline": "Reliable transport across the region"
-    },
-    {
-        "name": "Sahara Spice Co.",
-        "address": "Bazaar District, Timbuktu",
+        "name": "Gwen Utley",
+        "address": "Guadalajara, Mexico",
         "phone": "+223 69 456 123",
-        "website": "https://www.saharaspice.com",
-        "image": "sahara-spice.webp",
+        "website": "https://www.linkedin.com/in/gwen-utley-8b6636360/",
+        "image": "tech.jpg",
         "membershipLevel": "Silver",
-        "tagline": "Exotic spices from the heart of Africa"
+        "tagline": "Software Engineer and Developer with a passion for technology"
     },
     {
-        "name": "Mali Music Academy",
-        "address": "Culture Street, Timbuktu",
+        "name": "Martin Gerardo Cespedes",
+        "address": "Buenos Aires,Argentina",
         "phone": "+223 70 567 890",
-        "website": "https://www.malimusic.edu",
-        "image": "mali-music-academy.webp",
-        "membershipLevel": "Non-Profit",
-        "tagline": "Nurturing the next generation of griots"
+        "website": "https://www.linkedin.com/in/Martin-Cespedes/",
+        "image": "tech.jpg",
+        "membershipLevel": "Silver",
+        "tagline": "Scrum Master and Developer with a focus on agile methodologies"
     },
     {
-        "name": "Ancient Gold Exchange",
-        "address": "Gold Market, Timbuktu",
+        "name": "AKobina Adjoku",
+        "address": "Accra, Ghana",
         "phone": "+223 71 678 901",
-        "website": "https://www.ancientgold.biz",
-        "image": "ancient-gold.webp",
+        "website": "https://www.linkedin.com/in/akobina-adjoku/",
+        "image": "tech.jpg",
         "membershipLevel": "Gold",
-        "tagline": "Trusted partners in precious metals"
+        "tagline": "Python Developer and Data Scientist with a passion for data-driven solutions"
     },
     {
-        "name": "Caravan Cafe",
-        "address": "Oasis Avenue, Timbuktu",
+        "name": "Ramon Lamás",
+        "address": "Buenos Aires,Argentina",
         "phone": "+223 60 789 012",
-        "website": "https://www.caravancafe.com",
-        "image": "caravan-cafe.webp",
-        "membershipLevel": "Bronze",
-        "tagline": "The best dates and tea in town"
+        "website": "https://www.linkedin.com/in/ramon-lamas/",
+        "image": "tech.jpg",
+        "membershipLevel": "Gold",
+        "tagline": "Mainframe Developer and Software Engineer with a focus on web applications"
     }
 ]

@@ -3,7 +3,7 @@
 /* Date: 2025-07-09 */
 
 :root {
-    --primary-color: #4CAF50;
+    --primary-color: #4c6faf;
     /* A shade of green */
     --secondary-color: #FFC107;
     /* A shade of amber/yellow */
@@ -11,7 +11,7 @@
     /* Light grey */
     --text-color: #333;
     /* Dark grey for body text */
-    --heading-color: #2c3e50;
+    --heading-color: #4c2c50;
     /* Darker shade for headings */
     --accent-color: #03A9F4;
     /* A light blue for accents/links */
