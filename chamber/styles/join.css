@@ -1,0 +1,281 @@
+/* General styles, inspired by your existing main.css and siteplan.html */
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Hanken+Grotesk:wght@400;700&display=swap");
+
+:root {
+    /* Based on your existing code's aesthetic (dark background, light text) */
+    --background-color: #adb7be; /* Very dark gray/black */
+    --primary-text-color: #f3f5fa; /* Light gray/off-white */
+    --secondary-text-color: #aaaaaa; /* Medium gray */
+    --heading-color: #677ae6; /* White */
+    --accent-color: #6c757d; /* A subtle gray for accents, mimicking existing button borders/hover */
+    --link-color: #007bff; /* Standard blue for links, common in many themes */
+    --card-bg: #282828; /* Slightly lighter dark for sections */
+    --modal-bg: rgba(120, 136, 160, 0.801); /* Black w/ opacity for modal overlay */
+    --modal-content-bg: #3a3a3a; /* Darker background for modal content */
+}
+
+body {
+    font-family: 'Hanken Grotesk', sans-serif;
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+    margin: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #5d75c4; /* Example from your image */
+    padding: 1rem 2rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.keynote-tickets:hover {
+    background-color: var(--secondary-color);
+    color: var(--heading-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 1rem;
+    order: 3;
+    /* After nav on small screens */
+    margin-top: 1rem;
+    /* Spacing for small screens */
+}
+
+ .keynote-tickets {
+        order: initial;
+        margin-top: 0;
+    }
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: var(--primary-text-color);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--link-color);
+}
+
+.hero-section {
+    background-color: #7f81aa; /* Example background */
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+main {
+    flex-grow: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+h1, h2, h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: var(--heading-color);
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+}
+
+.form-section {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(132, 136, 177, 0.3);
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--secondary-text-color);
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form select,
+form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #d2d7e2;
+    border-radius: 4px;
+    background-color: #0f0f0f;
+    color: var(--primary-text-color);
+}
+
+form input[type="submit"] {
+    background-color: var(--link-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #c7d5e4;
+}
+
+.membership-levels {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr; /* Single column for small screens */
+    animation: fadeInCards 1s ease-out forwards; /* Animation on initial load */
+}
+
+.membership-card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(57, 101, 182, 0.2);
+    text-align: center;
+    border: 1px solid var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0; /* Start hidden for animation */
+    transform: translateY(20px); /* Start slightly below for animation */
+}
+
+.membership-card h3 {
+    color: var(--heading-color);
+    margin-top: 0;
+    font-size: 1.8em;
+}
+
+.membership-card p {
+    color: var(--secondary-text-color);
+    flex-grow: 1; /* Allows text to take up available space */
+}
+
+.membership-card .details-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 8px 15px;
+    background-color: var(--accent-color);
+    color: var(--primary-text-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.membership-card .details-link:hover {
+    background-color: #7473aa;
+    transform: translateY(-2px);
+}
+
+/* Modals */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: var(--modal-bg); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--modal-content-bg);
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%; /* Could be responsive */
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(111, 70, 206, 0.5);
+    color: var(--primary-text-color);
+}
+
+.close-button {
+    color: var(--secondary-text-color);
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #ccc;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #4941bb; /* Example from your image */
+    color: rgb(255, 255, 255);
+    text-align: left;
+    padding: 1rem 2rem;
+    margin-top: auto;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInCards {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.membership-card:nth-child(1) { animation-delay: 0.1s; }
+.membership-card:nth-child(2) { animation-delay: 0.2s; }
+.membership-card:nth-child(3) { animation-delay: 0.3s; }
+.membership-card:nth-child(4) { animation-delay: 0.4s; }
+
+
+/* Media Queries for Responsive Design */
+@media (min-width: 768px) {
+    main {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .form-section {
+        flex: 2; /* Take up more space */
+    }
+
+    .membership-levels {
+        flex: 1; /* Take up remaining space */
+        grid-template-columns: 1fr; /* Still single column here to stack them vertically on the side */
+    }
+}
+
+@media (min-width: 1024px) {
+    .membership-levels {
+        grid-template-columns: 1fr; /* Ensures they stack on the right */
+    }
+}

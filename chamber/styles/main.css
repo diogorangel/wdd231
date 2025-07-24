@@ -177,7 +177,7 @@ nav {
 }
 
 /* Keynote Tickets & Dark Mode Toggle */
-.keynote-tickets {
+.keynote-tickets:hover {
     background-color: var(--secondary-color);
     color: var(--heading-color);
     padding: 0.5rem 1rem;
@@ -191,11 +191,6 @@ nav {
     /* Spacing for small screens */
 }
 
-.keynote-tickets:hover {
-    background-color: darken(var(--secondary-color), 10%);
-    /* Example of a potential hover state */
-    text-decoration: none;
-}
 
 .dark-mode-toggle {
     order: 4;
