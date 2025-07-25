@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD 231 - Dynamic Web Fundamentals - Diogo Rangel Dos Santos - W06 Project BYU Jun2025 WDD131">
+    <meta name="author" content="Diogo Rangel Dos Santos">
+    <title>W04 Project: Proposal - Diogo Rangel</title>
+    <link rel="icon" type="image/x-icon" href="images/ds.jpeg">
+    <style>
+        /* CSS from the provided 'main.css' import, adapted for direct inclusion */
+        /* This is a simplified version to ensure basic styling of the siteplan.html */
+
+        /* General styles, inspired by your existing main.css */
+        @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Hanken+Grotesk:wght@400;700&display=swap");
+
+        :root {
+            /* Based on your existing code's aesthetic (dark background, light text) */
+            --background-color: #1a1a1a; /* Very dark gray/black */
+            --primary-text-color: #f8f8f8; /* Light gray/off-white */
+            --secondary-text-color: #aaaaaa; /* Medium gray */
+            --heading-color: #ffffff; /* White */
+            --accent-color: #6c757d; /* A subtle gray for accents, mimicking existing button borders/hover */
+            --link-color: #007bff; /* Standard blue for links, common in many themes */
+        }
+
+        body {
+            font-family: 'Hanken Grotesk', sans-serif; /* Using Hanken Grotesk for body as a modern, readable font */
+            background-color: var(--background-color);
+            color: var(--primary-text-color);
+            margin: 20px;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Barlow Condensed', sans-serif; /* Using Barlow Condensed for headings for a distinct, bold look */
+            color: var(--heading-color);
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+        }
+
+        h1 { font-size: 2.5em; }
+        h2 { font-size: 2em; }
+        h3 { font-size: 1.5em; }
+        h4 { font-size: 1.2em; }
+
+        p, li {
+            font-size: 1em;
+            color: var(--primary-text-color);
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            background-color: #282828; /* Slightly lighter dark for sections */
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo-placeholder {
+            width: 120px;
+            height: 120px;
+            background-color: var(--accent-color);
+            color: var(--primary-text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.9em;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 2px solid #555;
+            overflow: hidden; /* To ensure the image fits within the placeholder */
+        }
+        .logo-placeholder img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover; /* Maintain aspect ratio and cover the area */
+        }
+
+        .color-example {
+            display: inline-block;
+            width: 80px;
+            height: 25px;
+            vertical-align: middle;
+            margin-right: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 3px;
+        }
+
+        .typography-example {
+            padding: 10px;
+            background-color: #3a3a3a;
+            border-left: 5px solid var(--accent-color);
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+
+        .wireframe-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+        }
+
+        .wireframe-box {
+            border: 2px dashed var(--accent-color);
+            padding: 20px;
+            text-align: center;
+            flex: 1;
+            min-width: 300px; /* Adjusted min-width for better display */
+            max-width: 48%; /* For two columns on wider screens */
+            box-sizing: border-box;
+            background-color: #333;
+            border-radius: 8px;
+        }
+
+        .wireframe-box h4 {
+            margin-top: 0;
+            color: var(--secondary-text-color);
+            font-size: 1.3em;
+        }
+
+        .wireframe-sketch {
+            border: 1px solid var(--secondary-text-color);
+            min-height: 300px; /* Adjust as needed */
+            background-color: #444;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding: 10px;
+            align-items: center;
+            justify-content: flex-start;
+            font-size: 0.85em;
+            border-radius: 5px;
+        }
+        .wireframe-element {
+            border: 1px solid var(--accent-color);
+            background-color: #555;
+            color: var(--primary-text-color);
+            padding: 7px;
+            width: 95%;
+            text-align: center;
+            border-radius: 3px;
+        }
+        .wireframe-element.nav { height: 35px; }
+        .wireframe-element.hero { height: 100px; }
+        .wireframe-element.text-block { height: 70px; }
+        .wireframe-element.image-block { height: 120px; width: 120px; background-color: #666; display: flex; justify-content: center; align-items: center; }
+        .wireframe-element.button { padding: 10px 20px; }
+
+        @media (max-width: 768px) {
+            .wireframe-box {
+                max-width: 100%; /* Single column on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>W04 Project: Website Site Plan</h1>
+    <p><strong>Date:</strong> July 24, 2025</p>
+    <p><strong>Prepared by:</strong> Diogo Rangel Dos Santos</p>
+    <p><strong>To:</strong> BYU I - WDD231</p>
+
+    <hr style="border-color: var(--accent-color);">
+
+    <div class="section">
+        <h2>My Web Portfolio</h2>
+        <div class="logo-placeholder">
+            <img src="images/ds.jpeg" alt="Diogo Rangel Logo">
+        </div>
+        <p><strong>Site Name:</strong> Diogo Rangel's Personal Website</p>
+        <p><strong>Description:</strong> This site name directly reflects its purpose: to serve as a personal portfolio and professional hub for Diogo Rangel. It is clear, concise, and immediately communicates that the site is about me, Diogo Rangel, making it highly relevant and easily recognizable for potential employers, collaborators, or anyone interested in my professional profile.</p>
+        <p><strong>Optional Domain Availability:</strong> diogorangel.dev (or similar, depending on availability)</p>
+    </div>
+
+    <div class="section">
+        <h2>Site Purpose</h2>
+        <p>This website serves as my online professional portfolio and personal brand hub. Its primary purpose is to showcase my skills, projects, and professional background as a Systems Analyst (QA) with experience in test automation, quality assurance, software development, and cybersecurity. It will provide detailed information about my work experience, technical proficiencies, and educational achievements, serving as a comprehensive digital resume.</p>
+        <p>Specifically, the site will:</p>
+        <ul>
+            <li><strong>Present my professional experience and skills:</strong> Highlight my expertise in Java, Python, Selenium, Cucumber, SQL, HTML, CSS, and other tools/frameworks.</li>
+            <li><strong>Exhibit key projects:</strong> Detail my contributions to various projects, particularly those related to test automation and cybersecurity.</li>
+            <li><strong>Provide contact information:</strong> Offer clear channels for potential employers or collaborators to reach me.</li>
+            <li><strong>Share insights through a blog:</strong> Link to my "Technology on my Vision" newsletter/blog to demonstrate my thought leadership and continuous learning.</li>
+            <li><strong>Reflect my professional values:</strong> Communicate my commitment to obedience, integrity, confidentiality, and diligence in my work.</li>
+            <li><strong>Demonstrate dynamic web development:</strong> Showcase the use of external APIs for real-time data, like weather information.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Scenarios</h2>
+        <p>These questions represent typical visitor inquiries, guiding the website's content and functionality:</p>
+        <ol>
+            <li><strong>"I am a hiring manager looking for a QA Automation Engineer. Can I quickly see Diogo Rangel's relevant experience and projects?"</strong>
+                <p><em>(This drives the need for clear project sections, a concise resume/about me section, and prominent skill highlights on the homepage and a dedicated "Projects" or "Portfolio" page.)</em></p>
+            </li>
+            <li><strong>"I'm interested in Diogo Rangel's views on cybersecurity. Where can I find his articles or insights?"</strong>
+                <p><em>(This highlights the importance of a well-linked and easily discoverable "Blog" or "Insights" section, with a direct link to the LinkedIn newsletter.)</em></p>
+            </li>
+            <li><strong>"How can I get in touch with Diogo Rangel for a potential collaboration or job opportunity?"</strong>
+                <p><em>(This emphasizes the need for a clear, accessible "Contact" page with multiple contact methods, and potentially calls-to-action on other pages.)</em></p>
+            </li>
+            <li><strong>"What are Diogo Rangel's core values and professional philosophy?"</strong>
+                <p><em>(This indicates the importance of an "About Me" section that goes beyond skills to include personal and professional values.)</em></p>
+            </li>
+            <li>**"I want to see an example of Diogo Rangel's ability to integrate external data into a dynamic web page. Is there a live demonstration?"**
+                <p><em>(This highlights the need for a dedicated "Weather API" page that fetches and displays real-time weather data.)</em></p>
+            </li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>Color Scheme</h2>
+        <p>The chosen color scheme aims for a professional, modern, and clean aesthetic, consistent with my existing brand and the dark mode suggested by the provided HTML code. It prioritizes readability and a sense of sophistication.</p>
+        <ul>
+            <li><strong>Background Color:</strong> <span class="color-example" style="background-color: var(--background-color);"></span> <code style="color: var(--primary-text-color);">#1A1A1A</code> (Very Dark Gray/Black) - Used for the main body background, creating a sleek and modern look.</li>
+            <li><strong>Primary Text Color:</strong> <span class="color-example" style="background-color: var(--primary-text-color);"></span> <code style="color: var(--primary-text-color);">#F8F8F8</code> (Light Gray/Off-White) - Used for general paragraph text and primary content, ensuring high contrast and readability against the dark background.</li>
+            <li><strong>Secondary Text/Accent Color:</strong> <span class="color-example" style="background-color: var(--secondary-text-color);"></span> <code style="color: var(--secondary-text-color);">#AAAAAA</code> (Medium Gray) - Used for less prominent text, subtitles, borders, and subtle details to add depth without distracting.</li>
+            <li><strong>Heading Color:</strong> <span class="color-example" style="background-color: var(--heading-color);"></span> <code style="color: var(--heading-color);">#FFFFFF</code> (White) - Used for main headings (h1, h2, h3) to give them prominence and a crisp appearance.</li>
+            <li><strong>Link/Interactive Element Color:</strong> <span class="color-example" style="background-color: var(--link-color);"></span> <code style="color: var(--link-color);">#007bff</code> (Standard Blue) - Used for clickable links and interactive elements to indicate functionality and provide a touch of color contrast.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Typography</h2>
+        <p>The typographical choices aim for readability, professionalism, and a modern appeal, aligning with my professional brand. The fonts are imported via Google Fonts, as per the CSS you provided.</p>
+        <ul>
+            <li><strong>Headings (H1, H2, H3, H4):</strong>
+                <div class="typography-example" style="font-family: 'Barlow Condensed', sans-serif; font-weight: 700;">
+                    <p style="font-size: 1.5em; margin: 0; color: var(--heading-color);">Barlow Condensed Bold</p>
+                    <p style="font-size: 0.9em; margin: 0; color: var(--secondary-text-color);">Used for main titles and subtitles, providing a striking and modern look.</p>
+                </div>
+            </li>
+            <li><strong>Body Text (Paragraphs, Lists):</strong>
+                <div class="typography-example" style="font-family: 'Hanken Grotesk', sans-serif; font-weight: 400;">
+                    <p style="font-size: 1.1em; margin: 0; color: var(--primary-text-color);">Hanken Grotesk Regular</p>
+                    <p style="font-size: 0.9em; margin: 0; color: var(--secondary-text-color);">A modern and highly readable sans-serif font, ideal for body text and general content, ensuring clarity.</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Wireframe: Home Page Layout</h2>
+        <p>Below are simple wireframe sketches for the homepage, illustrating the basic layout and content blocks for mobile and desktop views.</p>
+
+        <div class="wireframe-container">
+            <div class="wireframe-box">
+                <h4>Mobile View Wireframe</h4>
+                <div class="wireframe-sketch">
+                    <div class="wireframe-element nav">Logo | Menu Icon</div>
+                    <div class="wireframe-element hero">Hero Section (Title, Subtitle, CTA)</div>
+                    <div class="wireframe-element text-block">"About Me" Summary</div>
+                    <div class="wireframe-element image-block">Profile Photo</div>
+                    <div class="wireframe-element text-block">Skills/Expertise Overview</div>
+                    <div class="wireframe-element">Project 1 (Title, Brief Desc.)</div>
+                    <div class="wireframe-element">Project 2 (Title, Brief Desc.)</div>
+                    <div class="wireframe-element button">View All Projects</div>
+                    <div class="wireframe-element">WeatherAPI</div> <div class="wireframe-element text-block">Blog Teaser/Latest Post</div>
+                    <div class="wireframe-element button">Read Blog</div>
+                    <div class="wireframe-element text-block">Contact Info/Form Link</div>
+                    <div class="wireframe-element nav">Social Media Icons</div>
+                    <div class="wireframe-element nav">Footer (Copyright)</div>
+                </div>
+            </div>
+
+            <div class="wireframe-box">
+                <h4>Wide Desktop View Wireframe</h4>
+                <div class="wireframe-sketch">
+                    <div class="wireframe-element nav" style="width: 98%; display: flex; justify-content: space-between; align-items: center;">
+                        <span style="width: 15%; text-align: left;">Logo</span>
+                        <span style="width: 60%; text-align: center;">Navigation Menu (Home | About | Projects | API de Temperatura | Blog | Contact)</span> <span style="width: 20%; text-align: right;">Social Icons | Contact Button</span>
+                    </div>
+                    <div class="wireframe-element hero" style="height: 120px; width: 98%;">
+                        Hero Section (Large Title, Professional Slogan, Intro Paragraph)
+                    </div>
+                    <div style="display: flex; width: 98%; gap: 10px; height: 180px;">
+                        <div class="wireframe-element text-block" style="flex: 2; height: 100%;">Detailed "About Me" Overview</div>
+                        <div class="wireframe-element image-block" style="flex: 1; height: 100%; min-width: 180px;">Large Profile Photo</div>
+                    </div>
+                    <div class="wireframe-element text-block" style="width: 98%; height: 60px;">
+                        "Let's Explore Some Projects" Title and Subtitle Section
+                    </div>
+                    <div style="display: flex; width: 98%; gap: 15px; flex-wrap: wrap; justify-content: space-between;">
+                        <div class="wireframe-element" style="width: 48%;">Project Card 1 (Title, Tag, Link to View)</div>
+                        <div class="wireframe-element" style="width: 48%;">Project Card 2 (Title, Tag, Link to View)</div>
+                        <div class="wireframe-element" style="width: 48%;">Project Card 3 (Title, Tag, Link to View)</div>
+                        <div class="wireframe-element" style="width: 48%;">Project Card 4 (Title, Tag, Link to View)</div>
+                    </div>
+                    <div class="wireframe-element button" style="width: 98%;">View All Projects Button</div>
+                    <div class="wireframe-element nav" style="width: 98%;">Footer (Contact Info, Social Media, Copyright)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    ---
+
+    <div class="section">
+        <h2>New Page Proposal: Weather API</h2>
+        <p>This page will serve as a live demonstration of my ability to interact with external APIs to fetch and display dynamic data. It will provide real-time temperature information for a specified location, demonstrating key web development skills.</p>
+
+        <h3>Purpose of the "Weather API" Page:</h3>
+        <ul>
+            <li><strong>Showcase dynamic web development:</strong> Directly fulfills the requirement to "Create dynamic web sites that leverage browser APIs, JSON, and remote APIs."</li>
+            <li><strong>Demonstrate API integration:</strong> Provides a concrete example of consuming a public API (e.g., OpenWeatherMap, WeatherAPI).</li>
+            <li><strong>Highlight front-end skills:</strong> Involves fetching data, parsing JSON, and dynamically updating the DOM.</li>
+            <li><strong>Exhibit UI/UX considerations:</strong> Will include input fields for location, clear display of temperature, and error handling messages.</li>
+            <li><strong>Address a common use case:</strong> Real-time weather data is a relatable and easily understandable demonstration of dynamic content.</li>
+        </ul>
+
+        <h3>Key Functionalities and Requirements:</h3>
+        <ol>
+            <li>
+                <h4>API Integration and Dynamic Content:</h4>
+                <ul>
+                    <li>**Remote API Consumption:** Utilize a public weather API (e.g., OpenWeatherMap, WeatherAPI) to fetch current temperature data.</li>
+                    <li>**JSON Handling:** Process the JSON response from the API to extract relevant temperature information.</li>
+                    <li>**Dynamic UI Updates:** Display the fetched temperature and related weather information (e.g., city, description, humidity) on the page dynamically without requiring a full page reload.</li>
+                    <li>**Browser APIs:** Leverage Fetch API or XMLHttpRequest for making asynchronous requests to the weather API.</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Valid HTML and CSS with Best Practices:</h4>
+                <ul>
+                    <li>**Semantic HTML5:** Use appropriate HTML tags (e.g., `<section>`, `<main>`, `<input>`, `<button>`, `<div>`, `<p>`) to structure the page content logically and semantically.</li>
+                    <li>**Accessibility (A11y):**
+                        <ul>
+                            <li>Provide meaningful `alt` text for any images (e.g., weather icons).</li>
+                            <li>Ensure proper focus management for interactive elements (input fields, buttons).</li>
+                            <li>Use ARIA attributes where necessary to enhance accessibility for screen readers (e.g., `aria-label`, `aria-describedby`).</li>
+                            <li>Ensure sufficient color contrast for all text and UI elements.</li>
+                            <li>Implement keyboard navigation for all interactive components.</li>
+                        </ul>
+                    </li>
+                    <li>**Compliance (WCAG, W3C Standards):**
+                        <ul>
+                            <li>Adhere to WCAG guidelines (e.g., perceivable, operable, understandable, robust).</li>
+                            <li>Validate HTML and CSS against W3C standards to ensure correct syntax and structure.</li>
+                        </ul>
+                    </li>
+                    <li>**Responsive Design:** Ensure the page layout and content adapt gracefully to various screen sizes (desktop, tablet, mobile) using CSS Media Queries.</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Performance Monitoring and Optimization:</h4>
+                <ul>
+                    <li>**Initial Page Load Performance:** Optimize CSS and JavaScript delivery (e.g., minify, defer non-critical scripts).</li>
+                    <li>**API Request Optimization:** Implement efficient API calls, potentially caching results for short periods if the API allows and it improves user experience without sacrificing real-time data accuracy too much.</li>
+                    <li>**User Experience (UX) Considerations:**
+                        <ul>
+                            <li>Provide clear loading indicators while fetching data.</li>
+                            <li>Implement robust error handling for API failures (e.g., display user-friendly messages if the API is down or the location is not found).</li>
+                            <li>Ensure a smooth and responsive user interface during interactions.</li>
+                        </ul>
+                    </li>
+                    <li>**Tools for Monitoring:** Mention the use of browser developer tools (e.g., Lighthouse, Network tab) to monitor loading times, API response times, and overall page performance.</li>
+                </ul>
+            </li>
+            <li>
+                <h4>Effective Team Member Traits (as applied to this project):</h4>
+                <ul>
+                    <li>**Clear Communication:** Clearly document the choice of API, any limitations, and the rationale behind design decisions.</li>
+                    <li>**Collaboration (Self-imposed/Future Team):** Structure the code in a modular and readable way for potential future collaboration or maintainability. Use clear commit messages if version control is applied.</li>
+                    <li>**Fulfilling Assignments:** Ensure all specified technical requirements (API integration, accessibility, performance) are met.</li>
+                    <li>**Meeting Deadlines:** Plan the development phases for this page to ensure timely completion within the project scope.</li>
+                    <li>**Problem-Solving:** Document any challenges encountered during API integration or UI development and the solutions implemented.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>Wireframe: WeatherAPI Layout</h3>
+        <p>A simple wireframe for the WeatherAPI page.</p>
+        <div class="wireframe-container">
+            <div class="wireframe-box">
+                <h4>Mobile/Desktop View Wireframe: WeatherAPI Page</h4>
+                <div class="wireframe-sketch" style="min-height: 400px;">
+                    <div class="wireframe-element nav">Header (Logo | Nav Menu)</div>
+                    <div class="wireframe-element text-block" style="height: 40px; font-size: 1.2em;">API de Temperatura - Título da Página</div>
+                    <div class="wireframe-element" style="height: 60px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px;">
+                        Input Field (e.g., "Digite a cidade")
+                        <div class="wireframe-element button" style="width: 50%;">Consultar Temperatura</div>
+                    </div>
+                    <div class="wireframe-element text-block" style="height: 80px; font-weight: bold; font-size: 1.5em;">
+                        <p>Temperature: --°C</p>
+                        <p>Condition: --</p>
+                    </div>
+                    <div class="wireframe-element text-block" style="height: 50px;">
+                        <p>City: --</p>
+                        <p>Humidity: --%</p>
+                    </div>
+                    <div class="wireframe-element text-block" style="height: 30px; background-color: #6a0000; color: #fff; display: none;" id="error-message-placeholder">
+                        Error Message (if any)
+                    </div>
+                    <div class="wireframe-element nav">Footer (Copyright)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
