@@ -1,0 +1,74 @@
+[
+    {
+        "name": "Diogo Rangel Dos Santos - Services",
+        "address": "São Paulo, Brazil",
+        "phone": "+5511969999-7777",
+        "website": "https://www.linkedin.com/in/diogorangels/",
+        "image": "images/tech.jpg",
+        "membershipLevel": "Gold",
+        "tagline": "Quality and web development and design services"
+    },
+    {
+        "name": "Damilola Adefenwa",
+        "address": "Lagos, Nigeria",
+        "phone": "+222222222222",
+        "website": "https://www.linkedin.com/in/damilolamercy17/",
+        "image": "images/tech.jpg",
+        "membershipLevel": "Gold",
+        "tagline": "Product Designer and Developer with a passion for creating user-friendly interfaces"
+    },
+    {
+        "name": "Emmanuel Odedina",
+        "address": "Lagos, Nigeria",
+        "phone": "+222222222222",
+        "website": "https://www.linkedin.com/in/emmanuel-odedina/",
+        "image": "images/tech.jpg",
+        "membershipLevel": "Gold",
+        "tagline": "Programmer and Developer with a focus on innovative solutions"
+    },
+    {
+        "name": "Lievelyn Adebayo",
+        "address": "Caracas, Venezuela",
+        "phone": "+178 123 4567",
+        "website": "https://www.linkedin.com/in/lievelyn-adebayo/",
+        "image": "images/tech.jpg",
+        "membershipLevel": "Gold",
+        "tagline": "Creative Designer and Developer with a flair for aesthetics"
+    },
+    {
+        "name": "Gwen Utley",
+        "address": "Guadalajara, Mexico",
+        "phone": "+223 69 456 123",
+        "website": "https://www.linkedin.com/in/gwen-utley-8b6636360/",
+        "image": "images/tech.jpg",
+        "membershipLevel": "Gold",
+        "tagline": "Software Engineer and Developer with a passion for technology"
+    },
+    {
+        "name": "Martin Gerardo Cespedes",
+        "address": "Buenos Aires,Argentina",
+        "phone": "+223 70 567 890",
+        "website": "https://www.linkedin.com/in/Martin-Cespedes/",
+        "image": "images/tech.jpg",
+        "membershipLevel": "Gold",
+        "tagline": "Scrum Master and Developer with a focus on agile methodologies"
+    },
+    {
+        "name": "AKobina Adjoku",
+        "address": "Accra, Ghana",
+        "phone": "+223 71 678 901",
+        "website": "https://www.linkedin.com/in/akobina-adjoku/",
+        "image": "images/tech.jpg",
+        "membershipLevel": "Gold",
+        "tagline": "Python Developer and Data Scientist with a passion for data-driven solutions"
+    },
+    {
+        "name": "Ramon Lamás",
+        "address": "Buenos Aires,Argentina",
+        "phone": "+223 60 789 012",
+        "website": "https://www.linkedin.com/in/ramon-lamas/",
+        "image": "images/tech.jpg",
+        "membershipLevel": "Gold",
+        "tagline": "Mainframe Developer and Software Engineer with a focus on web applications"
+    }
+]

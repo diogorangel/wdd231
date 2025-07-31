@@ -1,0 +1,894 @@
+/* Color Palette (Example - customize these for your design brief) */
+/* Author Diogo Rangel Dos Santos/
+/* Date: 2025-07-09 */
+
+:root {
+    --primary-color: #4c6faf;
+    /* A shade of green */
+    --secondary-color: #FFC107;
+    /* A shade of amber/yellow */
+    --background-color: #f8f9fa;
+    /* Light grey */
+    --text-color: #333;
+    /* Dark grey for body text */
+    --heading-color: #4c2c50;
+    /* Darker shade for headings */
+    --accent-color: #03A9F4;
+    /* A light blue for accents/links */
+    --light-grey: #ecf0f1;
+    --border-color: #ddd;
+
+    /* Dark Mode Colors (example) */
+    --dark-mode-background: #2c3e50;
+    --dark-mode-text: #ecf0f1;
+    --dark-mode-card-bg: #34495e;
+    --dark-mode-border: #4a627d;
+
+    /* Font Families (Example - customize these) */
+    --heading-font: 'Roboto', sans-serif;
+    --body-font: 'Open Sans', sans-serif;
+}
+
+/* Base Styles */
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Ensures footer sticks to bottom */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font);
+    color: var(--heading-color);
+    margin-top: 0;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Layout - Main Content Area */
+main {
+    flex: 1;
+    /* Allows main content to grow and push footer down */
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Center align main content */
+    width: 100%;
+    box-sizing: border-box;
+    /* Include padding in element's total width and height */
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    /* Allows wrapping on smaller screens */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo a {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Navigation */
+nav {
+    flex-grow: 1;
+    /* Allows nav to take available space */
+    text-align: right;
+    order: 2;
+    /* Ensures nav appears below logo on small screens */
+    width: 100%;
+    /* Take full width on small screens */
+    margin-top: 1rem;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    /* Stacked by default for mobile */
+    background-color: var(--primary-color);
+    /* Matches header */
+    width: 100%;
+    transition: max-height 0.3s ease-out;
+    max-height: 0;
+    /* Hidden by default */
+    overflow: hidden;
+}
+
+.nav-links.open {
+    max-height: 500px;
+    /* Adjust as needed to reveal all links */
+}
+
+.nav-links li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-links li:last-child {
+    border-bottom: none;
+}
+
+.nav-links a {
+    display: block;
+    padding: 0.8rem 1rem;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: var(--secondary-color);
+    color: var(--heading-color);
+    /* Contrast for active/hover */
+    text-decoration: none;
+}
+
+.hamburger-menu {
+    display: block;
+    /* Show hamburger on mobile */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    order: 1;
+    /* Appears first on small screens */
+}
+
+/* Keynote Tickets & Dark Mode Toggle */
+.keynote-tickets:hover {
+    background-color: var(--secondary-color);
+    color: var(--heading-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 1rem;
+    order: 3;
+    /* After nav on small screens */
+    margin-top: 1rem;
+    /* Spacing for small screens */
+}
+
+
+.dark-mode-toggle {
+    order: 4;
+    /* Last on small screens */
+    margin-left: auto;
+    /* Push to right */
+    margin-top: 1rem;
+    /* Spacing for small screens */
+}
+
+.dark-mode-toggle button {
+    background: none;
+    border: 1px solid white;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Dark Mode Body Class */
+body.dark-mode {
+    background-color: var(--dark-mode-background);
+    color: var(--dark-mode-text);
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: var(--dark-mode-text);
+}
+
+body.dark-mode a {
+    color: var(--accent-color);
+    /* Keep accent color for links */
+}
+
+body.dark-mode .nav-links a.active {
+    color: var(--heading-color);
+    /* Ensure text is visible on accent */
+}
+
+/* Footer */
+footer {
+    background-color: var(--heading-color);
+    /* Darker background */
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 1.5rem;
+    /* Space between flex items */
+}
+
+.contact-info,
+.social-media,
+.development-info {
+    flex: 1 1 250px;
+    /* Allow items to grow/shrink, with a base width */
+    text-align: left;
+}
+
+footer h3 {
+    color: var(--secondary-color);
+    /* Highlight with secondary color */
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+footer p {
+    margin: 0.4rem 0;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    /* Center icons if they wrap */
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-media img {
+    width: 40px;
+    /* Size for social icons */
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 5px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.social-media img:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.development-info {
+    font-size: 0.8rem;
+    text-align: right;
+}
+
+/* Dark Mode Footer */
+body.dark-mode footer {
+    background-color: #1a252f;
+    /* Even darker for dark mode footer */
+}
+
+/* Responsive Design */
+
+/* Medium screens (e.g., tablets) */
+@media (min-width: 768px) {
+    .header-content {
+        flex-wrap: nowrap;
+        /* Prevent wrapping for header elements */
+    }
+
+    nav {
+        width: auto;
+        order: initial;
+        /* Reset order */
+        margin-top: 0;
+        text-align: left;
+        /* Align nav to left in header */
+        margin-left: 2rem;
+        /* Space from logo */
+    }
+
+    .hamburger-menu {
+        display: none;
+        /* Hide hamburger on larger screens */
+    }
+
+    .nav-links {
+        flex-direction: row;
+        /* Display links in a row */
+        max-height: none;
+        /* Always visible */
+        overflow: visible;
+        background-color: transparent;
+        /* No background for nav links */
+    }
+
+    .nav-links li {
+        border-bottom: none;
+        margin-right: 1.5rem;
+        /* Spacing between links */
+    }
+
+    .nav-links li:last-child {
+        margin-right: 0;
+    }
+
+    .nav-links a {
+        padding: 0.5rem 0;
+        background-color: transparent;
+        color: white;
+        /* Default color */
+        border-bottom: 2px solid transparent;
+        /* For hover effect */
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        background-color: transparent;
+        color: white;
+        border-bottom-color: var(--secondary-color);
+        /* Highlight active/hover */
+    }
+
+    .keynote-tickets {
+        order: initial;
+        margin-top: 0;
+    }
+
+    .dark-mode-toggle {
+        order: initial;
+        margin-top: 0;
+        margin-left: 1rem;
+    }
+
+    .footer-content {
+        justify-content: space-between;
+    }
+
+    .contact-info,
+    .social-media,
+    .development-info {
+        flex: 0 1 auto;
+        /* Allow items to take natural width */
+    }
+
+    .social-media {
+        order: -1;
+        /* Move social media to the left in the middle */
+        margin-top: 0;
+    }
+
+    .development-info {
+        text-align: right;
+    }
+}
+
+/* Large screens (e.g., desktops) */
+@media (min-width: 1024px) {
+    /* Adjustments for larger screens if necessary */
+}
+
+/* Home Page Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    /* Adjust height as needed */
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    display: flex;
+    /* Use flexbox for content alignment */
+    align-items: center;
+    /* Vertically center content */
+    justify-content: center;
+    /* Horizontally center content */
+    text-align: center;
+}
+
+.hero img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures image covers the area without distortion */
+    z-index: 1;
+    filter: brightness(0.7);
+    /* Darken image for better text readability */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    /* Ensure content is above the image */
+    color: white;
+    padding: 1rem;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+    background-color: var(--secondary-color);
+    color: var(--heading-color);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+/* Common Section Styling */
+section {
+    background-color: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode section {
+    background-color: var(--dark-mode-card-bg);
+    border: 1px solid var(--dark-mode-border);
+}
+
+section h2 {
+    color: var(--heading-color);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+body.dark-mode section h2 {
+    color: var(--dark-mode-text);
+}
+
+/* Events Section */
+.event-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.event-card {
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: left;
+}
+
+body.dark-mode .event-card {
+    border: 1px solid var(--dark-mode-border);
+    background-color: var(--dark-mode-background);
+    /* Slightly darker than card */
+}
+
+.event-card h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.event-card p {
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+}
+
+/* Weather Section */
+#weather-display {
+    text-align: center;
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#current-weather {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+#current-weather img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+#current-temp {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+#current-description {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+
+.forecast-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.forecast-day {
+    border: 1px solid var(--border-color);
+    padding: 0.8rem;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+body.dark-mode .forecast-day {
+    border: 1px solid var(--dark-mode-border);
+    background-color: var(--dark-mode-background);
+}
+
+.forecast-day img {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 0.5rem;
+}
+
+.forecast-day p {
+    margin: 0.2rem 0;
+}
+
+.forecast-temp {
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* Business Spotlights Section */
+.spotlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.spotlight-card {
+    background-color: var(--light-grey);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+body.dark-mode .spotlight-card {
+    background-color: var(--dark-mode-background);
+    border: 1px solid var(--dark-mode-border);
+}
+
+.spotlight-card img {
+    max-width: 100px;
+    height: auto;
+    margin: 0 auto 1rem;
+    border-radius: 5px;
+}
+
+.spotlight-card h3 {
+    color: var(--heading-color);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+body.dark-mode .spotlight-card h3 {
+    color: var(--dark-mode-text);
+}
+
+.spotlight-card p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin: 0.3rem 0;
+}
+
+body.dark-mode .spotlight-card p {
+    color: var(--dark-mode-text);
+}
+
+.spotlight-card a {
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-top: 0.8rem;
+    display: block;
+}
+
+.spotlight-card .membership-level {
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+body.dark-mode .spotlight-card .membership-level {
+    border-top: 1px solid var(--dark-mode-border);
+}
+
+/* Responsive adjustments for Home Page */
+@media (max-width: 768px) {
+    .hero {
+        height: 300px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .weather-section,
+    .spotlights {
+        padding: 1.5rem;
+    }
+
+    .event-list,
+    .spotlight-grid {
+        grid-template-columns: 1fr;
+        /* Stack on small screens */
+    }
+
+    #current-weather {
+        flex-direction: column;
+    }
+
+    #current-temp {
+        font-size: 2.5rem;
+    }
+
+    .forecast-container {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero {
+        height: 500px;
+    }
+}
+
+.attraction-card figure {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    overflow: hidden;
+}
+
+.attraction-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* For hover effect */
+}
+
+.attraction-card .card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows content to take available space */
+}
+
+.attraction-card address {
+    font-style: normal; /* Override default italic for address */
+    color: #555;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.attraction-card p {
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Allows description to push button to bottom */
+}
+
+.attraction-card .learn-more-btn {
+    display: inline-block;
+    background-color: #3b82f6; /* Blue background */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    border: none; /* Remove default button border */
+    cursor: pointer;
+    align-self: flex-start; /* Align button to the start of the flex container */
+}
+
+.attraction-card .learn-more-btn:hover {
+    background-color: #2563eb; /* Darker blue on hover */
+}
+
+/* Medium screens (641px to 1024px) */
+@media (min-width: 641px) {
+    .discover-layout {
+        grid-template-columns: 2fr 1fr; /* Main content (cards) and sidebar */
+        grid-template-areas:
+            "hero hero"
+            "attractions sidebar";
+    }
+
+    #attractions-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Two columns or more */
+    }
+
+    /* Image hover effect for medium and large screens */
+    .attraction-card img:hover {
+        transform: scale(1.05); /* Slightly zoom in */
+        filter: brightness(1.1); /* Slightly brighter */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow */
+    }
+}
+
+/* Large screens (1025px and above) */
+@media (min-width: 1025px) {
+    .discover-layout {
+        grid-template-columns: 3fr 1fr; /* More space for main content */
+        grid-template-areas:
+            "hero hero"
+            "attractions sidebar";
+    }
+
+    #attractions-grid {
+        grid-template-columns: repeat(3, 1fr); /* Three columns for large screens */
+    }
+}
+
+/* Basic styles for header, nav, footer (mimicking existing site) */
+/* This assumes you have a base.css, medium.css, large.css for general layout.
+   These are minimal styles to make the provided HTML look coherent. */
+.bg-blue-900 { background-color: #1a202c; } /* Dark blue/black for header/footer */
+.text-white { color: #ffffff; }
+.p-4 { padding: 1rem; }
+.shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+.container { max-width: 1200px; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.flex { display: flex; }
+.justify-between { justify-content: space-between; }
+.items-center { align-items: center; }
+.text-2xl { font-size: 1.5rem; }
+.font-bold { font-weight: 700; }
+.hidden { display: none; }
+.md\:block { display: block; } /* For medium+ screens */
+.space-x-4 > *:not(:first-child) { margin-left: 1rem; }
+.hover\:text-blue-200:hover { color: #bfdbfe; }
+.focus\:outline-none:focus { outline: 2px solid transparent; outline-offset: 2px; }
+.bg-blue-800 { background-color: #2d3748; }
+.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.flex-col { flex-direction: column; }
+.space-y-2 > *:not(:first-child) { margin-top: 0.5rem; }
+.block { display: block; }
+.px-4 { padding-left: 1rem; padding-right: 1rem; }
+.hover\:bg-blue-700:hover { background-color: #4a5568; }
+.w-full { width: 100%; }
+.text-center { text-align: center; }
+.bg-gradient-to-r { background-image: linear-gradient(to right, var(--tw-gradient-stops)); }
+.from-blue-500 { --tw-gradient-from: #3b82f6; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(59, 130, 246, 0)); }
+.to-purple-600 { --tw-gradient-to: #9333ea; }
+.p-8 { padding: 2rem; }
+.rounded-lg { border-radius: 0.5rem; }
+.shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+.text-4xl { font-size: 2.25rem; }
+.mb-4 { margin-bottom: 1rem; }
+.text-lg { font-size: 1.125rem; }
+.bg-gray-100 { background-color: #f7fafc; }
+.p-6 { padding: 1.5rem; }
+.shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+.text-xl { font-size: 1.25rem; }
+.font-semibold { font-weight: 600; }
+.mb-3 { margin-bottom: 0.75rem; }
+.text-gray-700 { color: #4a5568; }
+.mt-8 { margin-top: 2rem; }
+.shadow-inner { box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06); }
+
+/* Responsive utility classes for display */
+@media (min-width: 768px) { /* md breakpoint */
+    .md\:block { display: block; }
+    .md\:hidden { display: none; }
+}
+
+@media (min-width: 1024px) { /* lg breakpoint */
+    .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
