@@ -1,13 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     const attractionsGrid = document.getElementById('attractions-grid');
     const visitMessageElement = document.getElementById('visit-message');
+    
+    // Novo código para o menu hambúrguer
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
 
-    // Function to fetch and display attractions
+    hamburgerMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+    });
+
+    // Função para buscar e exibir atrações
     async function getAttractions() {
         try {
-            // Adjust path based on your exact file structure.
-            // If discover.html is in 'chamber/' and discover.json is in 'data/',
-            // then the path from discover.html to discover.json is '../data/discover.json'.
             const response = await fetch('data/discover.json');
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -20,12 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Function to display attractions
+    // Função para exibir atrações
     function displayAttractions(attractions) {
-        attractionsGrid.innerHTML = ''; // Clear existing content
+        attractionsGrid.innerHTML = ''; 
         attractions.forEach(attraction => {
             const card = document.createElement('div');
-            card.classList.add('attraction-card'); // Tailwind classes for styling
+            card.classList.add('attraction-card');
 
             card.innerHTML = `
                 <h2>${attraction.name}</h2>
@@ -43,35 +48,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Function to handle last visit message
-    function displayLastVisitMessage() {
-        const lastVisit = localStorage.getItem('lastVisitDate');
-        const now = Date.now(); // Current time in milliseconds
-
-        if (!lastVisit) {
-            // First visit
-            visitMessageElement.textContent = "Welcome! Let us know if you have any questions.";
-        } else {
-            const lastVisitTime = parseInt(lastVisit, 10);
-            const timeDifference = now - lastVisitTime; // Difference in milliseconds
-
-            const millisecondsInADay = 24 * 60 * 60 * 1000;
-            const daysDifference = Math.floor(timeDifference / millisecondsInADay);
-
-            if (daysDifference < 1) {
-                // Less than a day
-                visitMessageElement.textContent = "Back so soon! Awesome!";
-            } else {
-                // More than a day
-                const dayText = daysDifference === 1 ? 'day' : 'days';
-                visitMessageElement.textContent = `You last visited ${daysDifference} ${dayText} ago.`;
-            }
+      // Dark Mode Toggle (Optional, but included for completeness from header)
+    const darkModeToggleBtn = document.querySelector('.dark-mode-toggle button');
+    if (darkModeToggleBtn) {
+        // Check for saved theme preference
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark-mode');
         }
-        // Update last visit date for the current visit
-        localStorage.setItem('lastVisitDate', now.toString());
+
+        darkModeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            // Save preference to localStorage
+            if (document.body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+            } else {
+                localStorage.setItem('theme', 'light');
+            }
+        });
     }
 
-    // Initialize functions
+    // Função para lidar com a mensagem da última visita
+    const lastModifiedSpan = document.getElementById('last-modified');
+    if (lastModifiedSpan) {
+        // Format the date as desired (e.g., MM/DD/YYYY HH:MM:SS)
+        const lastModifiedDate = new Date(document.lastModified);
+        const options = {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false // Use 24-hour format
+        };
+        lastModifiedSpan.textContent = lastModifiedDate.toLocaleDateString('en-US', options);
+    }
+
+    // Inicializar funções
     getAttractions();
     displayLastVisitMessage();
 });

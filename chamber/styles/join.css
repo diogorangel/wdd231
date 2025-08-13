@@ -1,48 +1,254 @@
-/* General styles, inspired by your existing main.css and siteplan.html */
-@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Hanken+Grotesk:wght@400;700&display=swap");
-
+/* Color Palette */
 :root {
-    /* Based on your existing code's aesthetic (dark background, light text) */
-    --background-color: #adb7be; /* Very dark gray/black */
-    --primary-text-color: #f3f5fa; /* Light gray/off-white */
-    --secondary-text-color: #aaaaaa; /* Medium gray */
-    --heading-color: #677ae6; /* White */
-    --accent-color: #6c757d; /* A subtle gray for accents, mimicking existing button borders/hover */
-    --link-color: #007bff; /* Standard blue for links, common in many themes */
-    --card-bg: #282828; /* Slightly lighter dark for sections */
-    --modal-bg: rgba(120, 136, 160, 0.801); /* Black w/ opacity for modal overlay */
-    --modal-content-bg: #3a3a3a; /* Darker background for modal content */
+    --primary-color: #4c6faf; /* Azul da Marinha */
+    --secondary-color: #FFC107; /* Âmbar/Amarelo */
+    --background-color: #f8f9fa; /* Cinza Claro */
+    --text-color: #333; /* Cinza Escuro */
+    --heading-color: #4c2c50; /* Roxo Escuro */
+    --accent-color: #03A9F4; /* Azul Claro */
+    --light-grey: #ecf0f1;
+    --border-color: #ddd;
+
+    /* Dark Mode Colors */
+    --dark-mode-background: #2c3e50;
+    --dark-mode-text: #ecf0f1;
+    --dark-mode-card-bg: #34495e;
+    --dark-mode-border: #4a627d;
+
+    /* Font Families */
+    --heading-font: 'TikTok Sans', sans-serif;
+    --body-font: 'TikTok Sans', sans-serif;
 }
 
+/* Base Styles */
 body {
-    font-family: 'Hanken Grotesk', sans-serif;
+    font-family: var(--body-font);
+    color: var(--text-color);
     background-color: var(--background-color);
-    color: var(--primary-text-color);
-    margin: 0;
     line-height: 1.6;
+    margin: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-header {
-    background-color: #5d75c4; /* Example from your image */
-    padding: 1rem 2rem;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font);
+    color: var(--heading-color);
+    margin-top: 0;
 }
 
-header .logo {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1.8em;
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Layout - Main Content Area */
+main {
+    flex: 1;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo a {
+    color: white;
+    font-size: 1.5rem;
     font-weight: bold;
+    text-decoration: none;
+}
+
+/* Navigation */
+nav {
+    flex-grow: 1;
+    text-align: right;
+    order: 2;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    width: 100%;
+    transition: max-height 0.3s ease-out;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.nav-links.open {
+    max-height: 500px;
+}
+
+.nav-links li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-links li:last-child {
+    border-bottom: none;
+}
+
+.nav-links a {
+    display: block;
+    padding: 0.8rem 1rem;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background-color: var(--secondary-color);
+    color: var(--heading-color);
+    text-decoration: none;
+}
+
+.hamburger-menu {
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    order: 1;
+}
+
+/* Keynote Tickets & Dark Mode Toggle */
+.keynote-tickets {
+    background-color: var(--secondary-color);
+    color: var(--heading-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 1rem;
+    order: 3;
+    margin-top: 1rem;
 }
 
 .keynote-tickets:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--accent-color);
+    color: var(--dark-mode-text);
+}
+
+.dark-mode-toggle {
+    order: 4;
+    margin-left: auto;
+    margin-top: 1rem;
+}
+
+.dark-mode-toggle button {
+    background: none;
+    border: 1px solid white;
+    color: white;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Dark Mode Body Class */
+body.dark-mode {
+    background-color: var(--dark-mode-background);
+    color: var(--dark-mode-text);
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: var(--dark-mode-text);
+}
+
+body.dark-mode a {
+    color: var(--accent-color);
+}
+
+body.dark-mode .nav-links a.active {
     color: var(--heading-color);
+}
+
+/* Footer */
+footer {
+    background-color: var(--heading-color);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.contact-info,
+.social-media,
+.development-info {
+    flex: 1 1 250px;
+    text-align: left;
+}
+
+.keynote-tickets:hover {
+    background-color: var(--accent-color);
+    color: var(--heading-color);
+    transform: scale(1);
     padding: 0.5rem 1rem;
     border-radius: 5px;
     text-decoration: none;
@@ -54,65 +260,96 @@ header .logo {
     /* Spacing for small screens */
 }
 
- .keynote-tickets {
-        order: initial;
-        margin-top: 0;
-    }
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 1.5rem;
-}
 
-nav a {
-    color: var(--primary-text-color);
-    text-decoration: none;
-    font-weight: 700;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: var(--link-color);
-}
-
-.hero-section {
-    background-color: #7f81aa; /* Example background */
-    color: white;
-    padding: 3rem 2rem;
-    text-align: center;
-}
-
-main {
-    flex-grow: 1;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-h1, h2, h3 {
-    font-family: 'Barlow Condensed', sans-serif;
+/* Keynote Tickets & Dark Mode Toggle */
+.keynote-tickets:hover {
+    background-color: var(--accent-color);
     color: var(--heading-color);
-    margin-top: 1.5em;
-    margin-bottom: 0.8em;
+    transform: scale(1);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 1rem;
+    order: 3;
+    /* After nav on small screens */
+    margin-top: 1rem;
+    /* Spacing for small screens */
 }
 
+footer h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+footer p {
+    margin: 0.4rem 0;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-media img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 5px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.social-media img:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.development-info {
+    font-size: 0.8rem;
+    text-align: right;
+}
+
+/* Dark Mode Footer */
+body.dark-mode footer {
+    background-color: #1a252f;
+}
+
+/* ------------------ Página de Formulário e Cartões (Join) ------------------ */
 .form-section {
-    background-color: var(--card-bg);
+    background-color: white;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(132, 136, 177, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode .form-section {
+    background-color: var(--dark-mode-card-bg);
+    border: 1px solid var(--dark-mode-border);
 }
 
 form label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
-    color: var(--secondary-text-color);
+    color: var(--text-color);
+}
+
+body.dark-mode form label {
+    color: var(--dark-mode-text);
 }
 
 form input[type="text"],
@@ -123,14 +360,24 @@ form textarea {
     width: calc(100% - 20px);
     padding: 10px;
     margin-bottom: 1rem;
-    border: 1px solid #d2d7e2;
+    border: 1px solid var(--border-color);
     border-radius: 4px;
-    background-color: #0f0f0f;
-    color: var(--primary-text-color);
+    background-color: var(--light-grey);
+    color: var(--text-color);
+}
+
+body.dark-mode form input[type="text"],
+body.dark-mode form input[type="email"],
+body.dark-mode form input[type="tel"],
+body.dark-mode form select,
+body.dark-mode form textarea {
+    background-color: var(--dark-mode-background);
+    color: var(--dark-mode-text);
+    border: 1px solid var(--dark-mode-border);
 }
 
 form input[type="submit"] {
-    background-color: var(--link-color);
+    background-color: var(--primary-color);
     color: white;
     padding: 10px 20px;
     border: none;
@@ -141,141 +388,183 @@ form input[type="submit"] {
 }
 
 form input[type="submit"]:hover {
-    background-color: #c7d5e4;
+    background-color: var(--accent-color);
 }
 
 .membership-levels {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: 1fr; /* Single column for small screens */
-    animation: fadeInCards 1s ease-out forwards; /* Animation on initial load */
+    display: block;
+    gap: 2.5rem;
 }
 
 .membership-card {
-    background-color: var(--card-bg);
+    background-color: white;
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(57, 101, 182, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     text-align: center;
-    border: 1px solid var(--accent-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    opacity: 0; /* Start hidden for animation */
-    transform: translateY(20px); /* Start slightly below for animation */
+    border: 1px solid var(--border-color);
+}
+
+body.dark-mode .membership-card {
+    background-color: var(--dark-mode-card-bg);
+    border: 1px solid var(--dark-mode-border);
 }
 
 .membership-card h3 {
-    color: var(--heading-color);
+    color: var(--primary-color);
     margin-top: 0;
     font-size: 1.8em;
 }
 
-.membership-card p {
-    color: var(--secondary-text-color);
-    flex-grow: 1; /* Allows text to take up available space */
+body.dark-mode .membership-card h3 {
+    color: var(--dark-mode-text);
 }
 
-.membership-card .details-link {
+.membership-card p {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+body.dark-mode .membership-card p {
+    color: var(--dark-mode-text);
+}
+
+.membership-card .details-button {
     display: inline-block;
-    margin-top: 1rem;
     padding: 8px 15px;
-    background-color: var(--accent-color);
-    color: var(--primary-text-color);
+    background-color: var(--primary-color);
+    color: white;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease;
 }
 
-.membership-card .details-link:hover {
-    background-color: #7473aa;
-    transform: translateY(-2px);
+.membership-card .details-button:hover {
+    background-color: var(--accent-color);
 }
 
-/* Modals */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: var(--modal-bg); /* Black w/ opacity */
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background-color: var(--modal-content-bg);
-    margin: auto;
-    padding: 30px;
-    border: 1px solid #888;
-    width: 80%; /* Could be responsive */
-    max-width: 600px;
-    border-radius: 10px;
-    position: relative;
-    box-shadow: 0 5px 15px rgba(111, 70, 206, 0.5);
-    color: var(--primary-text-color);
-}
-
-.close-button {
-    color: var(--secondary-text-color);
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close-button:hover,
-.close-button:focus {
-    color: #ccc;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-footer {
-    background-color: #4941bb; /* Example from your image */
-    color: rgb(255, 255, 255);
-    text-align: left;
-    padding: 1rem 2rem;
-    margin-top: auto;
-}
-
-/* Animation Keyframes */
-@keyframes fadeInCards {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.membership-card:nth-child(1) { animation-delay: 0.1s; }
-.membership-card:nth-child(2) { animation-delay: 0.2s; }
-.membership-card:nth-child(3) { animation-delay: 0.3s; }
-.membership-card:nth-child(4) { animation-delay: 0.4s; }
-
-
-/* Media Queries for Responsive Design */
+/* ------------------ Media Queries para Layout Responsivo ------------------ */
 @media (min-width: 768px) {
-    main {
+    .header-content {
+        flex-wrap: nowrap;
+    }
+
+    nav {
+        width: auto;
+        order: initial;
+        margin-top: 0;
+        text-align: left;
+        margin-left: 2rem;
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+
+    .nav-links {
         flex-direction: row;
+        max-height: none;
+        overflow: visible;
+        background-color: transparent;
+    }
+
+    .nav-links li {
+        border-bottom: none;
+        margin-right: 1.5rem;
+    }
+
+    .nav-links a {
+        padding: 0.5rem 0;
+        background-color: transparent;
+        color: white;
+        border-bottom: 2px solid transparent;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        background-color: transparent;
+        color: white;
+        border-bottom-color: var(--secondary-color);
+    }
+
+    .keynote-tickets {
+        order: initial;
+        margin-top: 0;
+    }
+
+    .dark-mode-toggle {
+        order: initial;
+        margin-top: 0;
+        margin-left: 1rem;
+    }
+
+    .footer-content {
         justify-content: space-between;
     }
 
-    .form-section {
-        flex: 2; /* Take up more space */
+    .contact-info,
+    .social-media,
+    .development-info {
+        flex: 0 1 auto;
     }
 
-    .membership-levels {
-        flex: 1; /* Take up remaining space */
-        grid-template-columns: 1fr; /* Still single column here to stack them vertically on the side */
+    .social-media {
+        order: -1;
+        margin-top: 0;
     }
-}
 
-@media (min-width: 1024px) {
-    .membership-levels {
-        grid-template-columns: 1fr; /* Ensures they stack on the right */
+    .development-info {
+        text-align: right;
     }
+    /* ------------------ Estilos dos Modals ------------------ */
+
+    /* Oculta o modal por padrão */
+    .modal {
+        display: none; /* Escondido por padrão */
+        position: fixed; /* Posição fixa na tela */
+        z-index: 1; /* Fica no topo de outros elementos */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto; /* Adiciona scroll se o conteúdo for muito grande */
+        background-color: rgb(0, 0, 0); /* Cor de fundo */
+        background-color: rgba(0, 0, 0, 0.4); /* Fundo com transparência */
+    }
+
+    /* Container do conteúdo do modal */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% do topo e centralizado */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 600px; /* Largura máxima para telas maiores */
+        border-radius: 8px;
+        position: relative;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* O botão de fechar (x) */
+    .close-button {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .close-button:hover,
+    .close-button:focus {
+        color: black;
+        text-decoration: none;
+    }
+
+    /* Estilos para o Dark Mode */
+    body.dark-mode .modal-content {
+        background-color: var(--dark-mode-card-bg);
+        color: var(--dark-mode-text);
+        border: 1px solid var(--dark-mode-border);
+    }
+    
 }

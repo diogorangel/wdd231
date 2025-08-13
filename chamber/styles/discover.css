@@ -132,6 +132,8 @@ nav {
     max-height: 0;
     /* Hidden by default */
     overflow: hidden;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-links.open {
@@ -152,7 +154,10 @@ nav {
     padding: 0.8rem 1rem;
     color: white;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.1s ease;
+    width: 100%;
+    text-align: center;
+    padding: 3rem 3;
 }
 
 .nav-links a:hover,
@@ -175,6 +180,23 @@ nav {
     order: 1;
     /* Appears first on small screens */
 }
+
+/* Keynote Tickets & Dark Mode Toggle */
+.keynote-tickets:hover {
+    background-color: var(--secondary-color);
+    color: var(--heading-color);
+    transform: matrix(1.05);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 1rem;
+    order: 3;
+    /* After nav on small screens */
+    margin-top: 1rem;
+    /* Spacing for small screens */
+}
+
 
 /* Keynote Tickets & Dark Mode Toggle */
 .keynote-tickets:hover {
@@ -224,25 +246,6 @@ nav {
 body.dark-mode {
     background-color: var(--dark-mode-background);
     color: var(--dark-mode-text);
-}
-
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode h4,
-body.dark-mode h5,
-body.dark-mode h6 {
-    color: var(--dark-mode-text);
-}
-
-body.dark-mode a {
-    color: var(--accent-color);
-    /* Keep accent color for links */
-}
-
-body.dark-mode .nav-links a.active {
-    color: var(--heading-color);
-    /* Ensure text is visible on accent */
 }
 
 /* Footer */
@@ -801,25 +804,16 @@ body.dark-mode .spotlight-card .membership-level {
     background-color: #2563eb; /* Darker blue on hover */
 }
 
-/* Medium screens (641px to 1024px) */
+/* Hover effect for images on medium and large screens */
 @media (min-width: 641px) {
-    .discover-layout {
-        grid-template-columns: 2fr 1fr; /* Main content (cards) and sidebar */
-        grid-template-areas:
-            "hero hero"
-            "attractions sidebar";
-    }
-
-    #attractions-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Two columns or more */
-    }
-
-    /* Image hover effect for medium and large screens */
-    .attraction-card img:hover {
-        transform: scale(1.05); /* Slightly zoom in */
-        filter: brightness(1.1); /* Slightly brighter */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow */
-    }
+  .attraction-card img {
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  }
+  .attraction-card img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
 }
 
 /* Large screens (1025px and above) */
@@ -831,9 +825,69 @@ body.dark-mode .spotlight-card .membership-level {
             "attractions sidebar";
     }
 
-    #attractions-grid {
-        grid-template-columns: repeat(3, 1fr); /* Three columns for large screens */
-    }
+    /* Grid for the 8 attraction cards */
+#attractions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  grid-area: attractions; /* Assigns this grid to the 'attractions' area */
+}
+
+/* Styling for each card */
+.attraction-card {
+  background-color: var(--light-grey);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.attraction-card h2 {
+  font-size: 1.5rem;
+  margin: 1rem 1rem 0.5rem;
+}
+
+.attraction-card figure {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 200px; /* Fixed height for consistent image size */
+  overflow: hidden;
+}
+
+.attraction-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block; /* Overrides existing img rule for a cleaner layout */
+}
+
+.attraction-card address {
+  font-style: normal;
+  color: var(--text-color);
+  margin: 0 1rem 0.5rem;
+}
+
+.attraction-card p {
+  color: var(--text-color);
+  margin: 0 1rem 1rem;
+  flex-grow: 1; /* Pushes the button to the bottom */
+}
+
+.attraction-card button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 1rem 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.attraction-card button:hover {
+  background-color: var(--accent-color);
 }
 
 /* Basic styles for header, nav, footer (mimicking existing site) */
@@ -890,5 +944,5 @@ body.dark-mode .spotlight-card .membership-level {
 }
 
 @media (min-width: 1024px) { /* lg breakpoint */
-    .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }

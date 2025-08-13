@@ -1,10 +1,10 @@
 [
     {
-        "name": "Diogo Rangel Dos Santos - Services",
+        "name": "Diogo Rangel Dos Santos",
         "address": "São Paulo, Brazil",
         "phone": "+5511969999-7777",
         "website": "https://www.linkedin.com/in/diogorangels/",
-        "image": "images/tech.jpg",
+        "image": "images/download(1).webp",
         "membershipLevel": "Gold",
         "tagline": "Quality and web development and design services"
     },
@@ -13,7 +13,7 @@
         "address": "Lagos, Nigeria",
         "phone": "+222222222222",
         "website": "https://www.linkedin.com/in/damilolamercy17/",
-        "image": "images/tech.jpg",
+        "image": "images/download(2).webp",
         "membershipLevel": "Gold",
         "tagline": "Product Designer and Developer with a passion for creating user-friendly interfaces"
     },
@@ -22,7 +22,7 @@
         "address": "Lagos, Nigeria",
         "phone": "+222222222222",
         "website": "https://www.linkedin.com/in/emmanuel-odedina/",
-        "image": "images/tech.jpg",
+        "image": "images/download(3).webp",
         "membershipLevel": "Gold",
         "tagline": "Programmer and Developer with a focus on innovative solutions"
     },
@@ -31,7 +31,7 @@
         "address": "Caracas, Venezuela",
         "phone": "+178 123 4567",
         "website": "https://www.linkedin.com/in/lievelyn-adebayo/",
-        "image": "images/tech.jpg",
+        "image": "images/download(4).webp",
         "membershipLevel": "Gold",
         "tagline": "Creative Designer and Developer with a flair for aesthetics"
     },
@@ -40,7 +40,7 @@
         "address": "Guadalajara, Mexico",
         "phone": "+223 69 456 123",
         "website": "https://www.linkedin.com/in/gwen-utley-8b6636360/",
-        "image": "images/tech.jpg",
+        "image": "images/download.webp",
         "membershipLevel": "Gold",
         "tagline": "Software Engineer and Developer with a passion for technology"
     },
@@ -49,7 +49,7 @@
         "address": "Buenos Aires,Argentina",
         "phone": "+223 70 567 890",
         "website": "https://www.linkedin.com/in/Martin-Cespedes/",
-        "image": "images/tech.jpg",
+        "image": "images/image2.webp",
         "membershipLevel": "Gold",
         "tagline": "Scrum Master and Developer with a focus on agile methodologies"
     },
@@ -58,7 +58,7 @@
         "address": "Accra, Ghana",
         "phone": "+223 71 678 901",
         "website": "https://www.linkedin.com/in/akobina-adjoku/",
-        "image": "images/tech.jpg",
+        "image": "images/image4.webp",
         "membershipLevel": "Gold",
         "tagline": "Python Developer and Data Scientist with a passion for data-driven solutions"
     },

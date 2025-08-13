@@ -23,24 +23,33 @@
         rel="stylesheet">
     <title>Join Us - Technology Commerce</title>
     <link rel="icon" type="image/x-icon" href="images/ds.jpeg">
-    <link rel="stylesheet" href="styles/main.css"> <link rel="stylesheet" href="styles/join.css"> </head>
+    <link rel="stylesheet" href="styles/join.css"> </head>
 <body>
     <header>
-        <div class="logo">Technology Commerce</div>
-        <nav>
-            <ul>
-               <li><a href="index.html">Home</a></li>
-                <li><a href="discover.html">Discover</a></li>
-                <li><a href="business-directory.html">Business Directory</a></li>
-                <li><a href="join.html">Join</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Podcast</a></li>
-                <li><a href="#">Events</a></li>
-            </ul>
-        </nav>
-        <div>
-            <button class="keynote-button">Keynote Tickets</button>
-            <span class="notification-icon">🔔</span>
+        <div class="header-content">
+            <div class="logo">
+                <a href="index.html">Technology Commerce</a>
+            </div>
+            <nav>
+                <button class="hamburger-menu" aria-label="Toggle navigation">&#9776;</button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="directory.html">Business Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <!--<li><a href="join.html">Join</a></li>-->
+                    <li><a href="#">About</a></li>
+                    <!--li><a href="about.html">About</a></li-->
+                    <li><a href="#">Podcast</a></li>
+                    <!--li><a href="podcast.html">Podcast</a></li-->
+                    <li><a href="#">Events</a></li>
+                    <!--li><a href="events.html">Events</a></li-->
+                </ul>
+            </nav>
+            <a href="#" class="keynote-tickets">Keynote Tickets</a>
+            <div class="dark-mode-toggle">
+                <button aria-label="Toggle dark mode">&#9680;</button>
+            </div>
         </div>
     </header>
 
@@ -105,25 +114,29 @@
             <div class="membership-card" id="np-membership">
                 <h3>NP Membership</h3>
                 <p>Designed for non-profit organizations. No membership fee.</p>
-                <a href="#" class="details-link" data-modal="modalNP">Learn More</a>
+                 <button class="details-button">Learn More</button>
+                <div class="benefits-container hidden" data-level="np">
             </div>
 
             <div class="membership-card" id="bronze-membership">
                 <h3>Bronze Membership</h3>
                 <p>Basic level membership with essential benefits.</p>
-                <a href="#" class="details-link" data-modal="modalBronze">Learn More</a>
+                <button class="details-button">Learn More</button>
+                <div class="benefits-container hidden" data-level="bronze">
             </div>
 
             <div class="membership-card" id="silver-membership">
                 <h3>Silver Membership</h3>
                 <p>Enhanced benefits including additional networking opportunities.</p>
-                <a href="#" class="details-link" data-modal="modalSilver">Learn More</a>
+                 <button class="details-button">Learn More</button>
+                 <div class="benefits-container hidden" data-level="silver">
             </div>
 
             <div class="membership-card" id="gold-membership">
                 <h3>Gold Membership</h3>
                 <p>Premium benefits, including spotlight advertising and exclusive events.</p>
-                <a href="#" class="details-link" data-modal="modalGold">Learn More</a>
+                 <button class="details-button">Learn More</button>
+                 <div class="benefits-container hidden" data-level="gold">
             </div>
         </div>
     </main>
