@@ -2,24 +2,47 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Hanken+Grotesk:wght@400;700&display=swap");
 
 :root {
-    --background-color: #818cf0; /* Very dark gray/black */
-    --primary-text-color: #f8f8f8; /* Light gray/off-white */
-    --secondary-text-color: #f7ecec; /* Medium gray */
-    --heading-color: #ffffff; /* White */
-    --accent-color: #e2e8ee; /* A subtle gray for accents */
-    --link-color: #007bff; /* Standard blue for links */
-    --card-bg: #3c18c0; /* Slightly lighter dark for sections/cards */
+    --primary-color: #4c6faf; /* Azul da Marinha */
+    --secondary-color: #FFC107; /* Âmbar/Amarelo */
+    --background-color: #f8f9fa; /* Cinza Claro */
+    --text-color: #333; /* Cinza Escuro */
+    --heading-color: #4c2c50; /* Roxo Escuro */
+    --accent-color: #03A9F4; /* Azul Claro */
+    --light-grey: #ecf0f1;
+    --border-color: #ddd;
+
+    /* Dark Mode Colors */
+    --dark-mode-background: #2c3e50;
+    --dark-mode-text: #ecf0f1;
+    --dark-mode-card-bg: #34495e;
+    --dark-mode-border: #4a627d;
+
+    /* Font Families */
+    --heading-font: 'TikTok Sans', sans-serif;
+    --body-font: 'TikTok Sans', sans-serif;
 }
 
+
 body {
-    font-family: 'Hanken Grotesk', sans-serif;
+    font-family: var(--body-font);
+    color: var(--text-color);
     background-color: var(--background-color);
-    color: var(--primary-text-color);
-    margin: 0;
     line-height: 1.6;
+    margin: 0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font);
+    color: var(--heading-color);
+    margin-top: 0;
 }
 
 header {
@@ -29,6 +52,16 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    /* Allows wrapping on smaller screens */
+    align-items: center;
+    justify-content: space-between;
 }
 
 header .logo {
@@ -74,20 +107,6 @@ nav a:hover {
     color: var(--link-color);
 }
 
-.keynote-button {
-    background-color: #007bff; /* Example from image */
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 1rem;
-    transition: background-color 0.3s ease;
-}
-
-.keynote-button:hover {
-    background-color: #0056b3;
-}
 
 .notification-icon {
     font-size: 1.2em;
@@ -133,7 +152,7 @@ main {
 }
 
 footer {
-    background-color: #3470be; /* Example from your image */
+    background-color: #2971cf; /* Example from your image */
     color: white;
     text-align: center;
     padding: 1rem 2rem;
@@ -145,7 +164,572 @@ footer {
     padding: 1rem;
     font-size: 0.8em;
     color: var(--secondary-text-color);
-    background-color: #4a65df; /* Slightly different background for this section */
     margin-top: 1rem;
-    border-top: 1px solid #444;
+}
+
+/* Medium screens (e.g., tablets) */
+@media (min-width: 768px) {
+    .header-content {
+        flex-wrap: nowrap;
+        /* Prevent wrapping for header elements */
+    }
+
+    nav {
+        width: auto;
+        order: initial;
+        /* Reset order */
+        margin-top: 0;
+        text-align: left;
+        /* Align nav to left in header */
+        margin-left: 2rem;
+        /* Space from logo */
+    }
+
+    .hamburger-menu {
+        display: none;
+        /* Hide hamburger on larger screens */
+    }
+
+    .nav-links {
+        flex-direction: row;
+        /* Display links in a row */
+        max-height: none;
+        /* Always visible */
+        overflow: visible;
+        background-color: transparent;
+        /* No background for nav links */
+    }
+
+    .nav-links li {
+        border-bottom: none;
+        margin-right: 1.5rem;
+        /* Spacing between links */
+    }
+
+    .nav-links li:last-child {
+        margin-right: 0;
+    }
+
+    .nav-links a {
+        padding: 0.5rem 0;
+        background-color: transparent;
+        color: white;
+        /* Default color */
+        border-bottom: 2px solid transparent;
+        /* For hover effect */
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+        background-color: transparent;
+        color: white;
+        border-bottom-color: var(--secondary-color);
+        /* Highlight active/hover */
+    }
+
+    .dark-mode-toggle {
+        order: initial;
+        margin-top: 0;
+        margin-left: 1rem;
+    }
+
+    .footer-content {
+        justify-content: space-between;
+    }
+
+    .contact-info,
+    .social-media,
+    .development-info {
+        flex: 0 1 auto;
+        /* Allow items to take natural width */
+    }
+
+    .social-media {
+        order: -1;
+        /* Move social media to the left in the middle */
+        margin-top: 0;
+    }
+
+    .development-info {
+        text-align: right;
+    }
+}
+
+/* Large screens (e.g., desktops) */
+@media (min-width: 1024px) {
+    /* Adjustments for larger screens if necessary */
+}
+
+/* Home Page Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    /* Adjust height as needed */
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    display: flex;
+    /* Use flexbox for content alignment */
+    align-items: center;
+    /* Vertically center content */
+    justify-content: center;
+    /* Horizontally center content */
+    text-align: center;
+}
+
+.hero img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures image covers the area without distortion */
+    z-index: 1;
+    filter: brightness(0.7);
+    /* Darken image for better text readability */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    /* Ensure content is above the image */
+    color: white;
+    padding: 1rem;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+    background-color: var(--secondary-color);
+    color: var(--heading-color);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+/* Common Section Styling */
+section {
+    background-color: white;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode section {
+    background-color: var(--dark-mode-card-bg);
+    border: 1px solid var(--dark-mode-border);
+}
+
+section h2 {
+    color: var(--heading-color);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+body.dark-mode section h2 {
+    color: var(--dark-mode-text);
+}
+
+/* Events Section */
+.event-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.event-card {
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: left;
+}
+
+body.dark-mode .event-card {
+    border: 1px solid var(--dark-mode-border);
+    background-color: var(--dark-mode-background);
+    /* Slightly darker than card */
+}
+
+.event-card h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.event-card p {
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+}
+
+/* Weather Section */
+#weather-display {
+    text-align: center;
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+#current-weather {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+#current-weather img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+#current-temp {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+#current-description {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+
+.forecast-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+.forecast-day {
+    border: 1px solid var(--border-color);
+    padding: 0.8rem;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+body.dark-mode .forecast-day {
+    border: 1px solid var(--dark-mode-border);
+    background-color: var(--dark-mode-background);
+}
+
+.forecast-day img {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 0.5rem;
+}
+
+.forecast-day p {
+    margin: 0.2rem 0;
+}
+
+.forecast-temp {
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* Business Spotlights Section */
+.spotlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.spotlight-card {
+    background-color: var(--light-grey);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+body.dark-mode .spotlight-card {
+    background-color: var(--dark-mode-background);
+    border: 1px solid var(--dark-mode-border);
+}
+
+.spotlight-card img {
+    max-width: 100px;
+    height: auto;
+    margin: 0 auto 1rem;
+    border-radius: 5px;
+}
+
+.spotlight-card h3 {
+    color: var(--heading-color);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+body.dark-mode .spotlight-card h3 {
+    color: var(--dark-mode-text);
+}
+
+.spotlight-card p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin: 0.3rem 0;
+}
+
+body.dark-mode .spotlight-card p {
+    color: var(--dark-mode-text);
+}
+
+.spotlight-card a {
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-top: 0.8rem;
+    display: block;
+}
+
+.spotlight-card .membership-level {
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+body.dark-mode .spotlight-card .membership-level {
+    border-top: 1px solid var(--dark-mode-border);
+}
+
+/* Responsive adjustments for Home Page */
+@media (max-width: 768px) {
+    .hero {
+        height: 300px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .weather-section,
+    .spotlights {
+        padding: 1.5rem;
+    }
+
+    .event-list,
+    .spotlight-grid {
+        grid-template-columns: 1fr;
+        /* Stack on small screens */
+    }
+
+    #current-weather {
+        flex-direction: column;
+    }
+
+    #current-temp {
+        font-size: 2.5rem;
+    }
+
+    .forecast-container {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero {
+        height: 500px;
+    }
+}
+
+.attraction-card figure {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    overflow: hidden;
+}
+
+.attraction-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out; /* For hover effect */
+}
+
+.attraction-card .card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allows content to take available space */
+}
+
+.attraction-card address {
+    font-style: normal; /* Override default italic for address */
+    color: #555;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.attraction-card p {
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Allows description to push button to bottom */
+}
+
+.attraction-card .learn-more-btn {
+    display: inline-block;
+    background-color: #3b82f6; /* Blue background */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    border: none; /* Remove default button border */
+    cursor: pointer;
+    align-self: flex-start; /* Align button to the start of the flex container */
+}
+
+.attraction-card .learn-more-btn:hover {
+    background-color: #2563eb; /* Darker blue on hover */
+}
+
+/* Hover effect for images on medium and large screens */
+@media (min-width: 641px) {
+  .attraction-card img {
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+  }
+  .attraction-card img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Large screens (1025px and above) */
+@media (min-width: 1025px) {
+    .discover-layout {
+        grid-template-columns: 3fr 1fr; /* More space for main content */
+        grid-template-areas:
+            "hero hero"
+            "attractions sidebar";
+    }
+
+    /* Grid for the 8 attraction cards */
+#attractions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  grid-area: attractions; /* Assigns this grid to the 'attractions' area */
+}
+
+/* Styling for each card */
+.attraction-card {
+  background-color: var(--light-grey);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.attraction-card h2 {
+  font-size: 1.5rem;
+  margin: 1rem 1rem 0.5rem;
+}
+
+/* Keynote Tickets & Dark Mode Toggle */
+.keynote-tickets:hover {
+    background-color: var(--secondary-color);
+    color: var(--heading-color);
+    transform: matrix(1.05);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 1rem;
+    order: 3;
+    /* After nav on small screens */
+    margin-top: 1rem;
+    /* Spacing for small screens */
+}
+
+
+.attraction-card figure {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 200px; /* Fixed height for consistent image size */
+  overflow: hidden;
+}
+
+.attraction-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block; /* Overrides existing img rule for a cleaner layout */
+}
+
+.attraction-card address {
+  font-style: normal;
+  color: var(--text-color);
+  margin: 0 1rem 0.5rem;
+}
+
+.attraction-card p {
+  color: var(--text-color);
+  margin: 0 1rem 1rem;
+  flex-grow: 1; /* Pushes the button to the bottom */
+}
+
+.attraction-card button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 1rem 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.attraction-card button:hover {
+  background-color: var(--accent-color);
 }
